@@ -1,0 +1,30 @@
+create a folder
+open that folder in vscode
+new terminal
+run command npm init --yes  this will create a pakage.jason file
+now install hardhat using npm install --save-dev hardhat
+after installation is finished you have pakage-lock.json file
+now run command npx hardhat and create a empty hardhat.config.js because we are starting from basic
+now we have hardhat.config.js folder in which we can see and change the solidity version w want to choose.
+now create some folders names contracts tests and scripts in which we will add out contracts run our tests and write our scripts.
+now to run test we need to install one other library using the command:-
+- npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
+after installing import the waffle in the hardhat.config.js file using require("@) and selecthardhat-waffle.
+now go to contract folder and create a new .sol file for your contract and write your code
+after writing your code type cd "name of contracts folder" then press enter and write npx hardhat compile
+now we will start testing the smart contract we have created.
+go to the test folder and create a file token.js
+now we will import the chai library to run our unit tests using
+const {expect} = require("chai");
+after importing the chai library we will use moka framework using
+describe("contract name", function(){
+now use it here to write your first test
+now use a async function
+create a ether.getSigners() function "const [owner] = await ethers.getSigners();" which is an objest used to access accounts information like address, balance expect
+now create a console log object using console.log("signers object", owner); this will create a signer object in the owner.
+now we will create a instance of out contract using const Token = await ethers.getContractFactory("Token");
+now we will deploy this instance using const hardhatToken = await Token.deploy(); and hard hat will handle the deployment.
+after that create an instance of ownerBalance and call balanceOf function in it
+now use chai library expect and call total supply function and add what answer you want it to match.
+now write npx hardhat test in terminal and it will run the test
+
